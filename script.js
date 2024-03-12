@@ -12,10 +12,6 @@ async function checkWeather(city) {
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
         document.querySelector(".back-btn").style.display = "block";
-        document.querySelector(".back-btn a").addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent default action of the anchor tag
-            window.location.href = "/index.html"; // Redirect to index.html
-        });
     }else{
         var data = await response.json();
 
@@ -43,10 +39,7 @@ async function checkWeather(city) {
         document.querySelector(".weather").style.display = "block";
         document.querySelector(".error").style.display = "none";
         document.querySelector(".back-btn").style.display = "block";
-        document.querySelector(".back-btn a").addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent default action of the anchor tag
-            window.location.href = "/index.html"; // Redirect to index.html
-        });
+        
     }
   
     
@@ -73,3 +66,7 @@ searchBtn.addEventListener("click", () => {
     }
 });
 
+document.querySelector(".back-btn a").addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = "https://niharikakolisetty.github.io/Weather-Application/index.html";
+});
