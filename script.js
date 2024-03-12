@@ -68,5 +68,5 @@ searchBtn.addEventListener("click", () => {
 
 document.querySelector(".back-btn a").addEventListener("click", (event) => {
     event.preventDefault();
-    window.location.href = "https://niharikakolisetty.github.io/Weather-Application/index.html";
+    window.location.href = "https://niharikakolisetty.github.io/Weather-Application/";
 });
