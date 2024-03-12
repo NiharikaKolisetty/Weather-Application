@@ -11,6 +11,7 @@ async function checkWeather(city) {
     if(response.status==404){
         document.querySelector(".error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
+        document.querySelector(".back-btn").style.display = "block";
     }else{
         var data = await response.json();
 
@@ -37,10 +38,23 @@ async function checkWeather(city) {
     
         document.querySelector(".weather").style.display = "block";
         document.querySelector(".error").style.display = "none";
+        document.querySelector(".back-btn").style.display = "block";
     }
   
     
 }
+
+searchBox.addEventListener("keypress", (event) => {
+    // Check if the pressed key is Enter (key code 13)
+    if (event.key === "Enter") {
+        const city = searchBox.value;
+        if (city) {
+            checkWeather(city);
+        } else {
+            alert("Please enter a city name.");
+        }
+    }
+});
 
 searchBtn.addEventListener("click", () => {
     const city = searchBox.value;
@@ -50,3 +64,4 @@ searchBtn.addEventListener("click", () => {
         alert("Please enter a city name.");
     }
 });
+
